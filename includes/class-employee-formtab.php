@@ -80,6 +80,8 @@ if( ! class_exists( 'submenu_employee_tab' )){
                 $empdesig = $_POST['empdesig'];
                 $empdob = $_POST['emp_dob'];
                 $gender = $_POST['gender'];
+                $skills = $_POST['emp_skills'];
+                $city = $_POST['emp_city'];
 
                 require_once( ABSPATH . '/wp-includes/pluggable.php' );
                 require_once( ABSPATH . 'wp-admin/includes/file.php' );
@@ -128,6 +130,8 @@ if( ! class_exists( 'submenu_employee_tab' )){
 						'designation' => $empdesig,
                         'dob' => $empdob,
                         'gender' => $gender,
+                        'skills' => $skills,
+                        'city' => $city,
 					)
 				);
 			}
@@ -164,7 +168,7 @@ if( ! class_exists( 'submenu_employee_tab' )){
                 
 				$table_name = $wpdb->prefix . 'empdetails';
 				$dlt = $_POST['update_id'];
-				$res = $wpdb->get_results( "SELECT id,firstname, lastname,email,designation,empimage,dob FROM $table_name where id = $dlt");
+				$res = $wpdb->get_results( "SELECT image,id,firstname, lastname,email,designation,dob,gender,skills,city FROM $table_name where id = $dlt");
                 print_r($res);
                 
 			include_once dirname( __DIR__ ).'/template/class-fetch-data.php';
@@ -179,12 +183,15 @@ if( ! class_exists( 'submenu_employee_tab' )){
 
 			global $wpdb;
             
+            $empimage;
             $empfirstname;
             $emplastname;
             $empemail;
             $empdesig;
-            $empimage;
             $empdob;
+            $empgender;
+            $empskills;
+            $empcity;
             
 			if ( isset( $_POST['empsubmit'] ) && isset($_GET['update_id'])){
 
@@ -197,11 +204,15 @@ if( ! class_exists( 'submenu_employee_tab' )){
                 $table_name, 
                 array(
                     
+                    'image' => $empfirstname,
                     'firstname' => $empfirstname,
                     'lastname' => $emplastname,
                     'email' => $empemail,
                     'designation' => $empdesig,
-                    'dob' => $empdob
+                    'dob' => $empdob,
+                    'gender' => $empgender,
+                    'skills' => $empskills,
+                    'city' => $empcity
                     
                 ),
                 array('id'=>$dlt)

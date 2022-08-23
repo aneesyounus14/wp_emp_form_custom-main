@@ -130,22 +130,31 @@
 
     <?php 
 
+      $image = "";
       $firstname= "";
       $lastname= "";
       $email= "";
       $designation= "";
       $dob= "";
+      $gender= "";
+      $skills= "";
+      $city= "";
       
       if(isset($_GET['update_id']))
       {
         global $wpdb;
         $table_name = $wpdb->prefix . 'empdetails';
         $dlt = $_GET['update_id'];
-        $result = $wpdb->get_results( "SELECT id,firstname, lastname,email,designation,dob FROM $table_name where id = $dlt");
+        $result = $wpdb->get_results( "SELECT image,id,firstname, lastname,email,designation,dob,gender,skills,city FROM $table_name where id = $dlt");
+        $image = $result[0]->image;
         $firstname= $result[0]->firstname;
         $lastname= $result[0]->lastname;
         $email= $result[0]->email;
+        $designation= $result[0]->designation;
         $dob= $result[0]->dob;
+        $gender= $result[0]->gender;
+        $skills= $result[0]->skills;
+        $city= $result[0]->city;
 
       }
 
@@ -241,9 +250,9 @@
 
       <div class="col-25">
 
-        <input type="radio" name="gender" value="Male">Male 
+        <input type="radio" name="gender" value="Male" required>Male 
 
-        <input type="radio" name="gender" value="Female">Female 
+        <input type="radio" name="gender" value="Female" required>Female 
 
       </div>
 
@@ -253,18 +262,42 @@
       
       <div class="col-15 emp_label">
 
-        <label for="emp_rate">8. rate my work</label>
+        <label>8. Skills in % ?</label>
 
       </div>
 
       <div class="col-25">
 
-      <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value);">
-      <input type="text" id="textInput" value="" disabled>
+      <input type="range" name="emp_skills" min="0" max="100" onchange="updateTextInput(this.value);" required>
+      <input type="text" id="textInput" value="" disabled style="width:45px;height:45px; text-align: center; border-radius: 50%; border:1px solid grey; color: black;"><br>
 
       </div>
 
     </div>
+
+    <div class="row">
+      
+      <div class="col-15 emp_label">
+
+        <label>9. Which City You Are Live In ?</label>
+
+      </div>
+
+      <div class="col-25">
+
+        <select width=300 style="width: 350px" name="emp_city">
+          <option value='' selected>Select a Color</option>
+          <option value='Karachi'>Karachi</option>
+          <option value='Lahore'>Lahore</option>
+          <option value='Islamabad'>Islamabad</option>
+          <option value='Faisalabad'>Faisalabad</option>
+          <option value='KPK'>KPK</option>
+        </select>
+
+      </div>
+
+    </div>
+
    
     <div class="row">
       <input type="submit" name="empsubmit" value="Submit">

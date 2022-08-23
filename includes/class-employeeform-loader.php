@@ -57,6 +57,8 @@ if( ! class_exists( 'employee_loader' )){
                 designation varchar(50) NOT NULL,
                 dob date NOT NULL,
                 gender VARCHAR( 30 ) NOT NULL ,
+                skills mediumint(9) NOT NULL,
+                city VARCHAR( 55 ) NOT NULL ,
                 PRIMARY KEY(id)
 
             ) $charset_collate;";

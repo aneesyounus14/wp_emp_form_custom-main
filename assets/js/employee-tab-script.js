@@ -14,14 +14,19 @@ jQuery(document).ready(function($){
             var pid5 = 'get-' + id + '-5';
             var pid6 = 'get-' + id + '-6';
             var pid7 = 'get-' + id + '-7';
+            var pid8 = 'get-' + id + '-8';
+            var pid9 = 'get-' + id + '-9';
 
-            var firstname = document.getElementById(pid1).innerText
-            var lastname = document.getElementById(pid2).innerText
-            var email = document.getElementById(pid3).innerText
-            var design = document.getElementById(pid4).innerText
-            var dob = document.getElementById(pid5).innerText
-            var img   = document.getElementById(pid6).firstChild.src
+            var img   = document.getElementById(pid1).firstChild.src
+            var firstname = document.getElementById(pid2).innerText
+            var lastname = document.getElementById(pid3).innerText
+            var email = document.getElementById(pid4).innerText
+            var design = document.getElementById(pid5).innerText
+            var dob = document.getElementById(pid6).innerText
             var gender = document.getElementById(pid7).innerText
+            var skills = document.getElementById(pid8).innerText
+            var city = document.getElementById(pid9).innerText
+            
 
             to_be_print = window.open("");
 
@@ -34,8 +39,11 @@ jQuery(document).ready(function($){
                     <pstyle="font-family: sans-serif; font-size: 22px;"><b>Last Name :</b> ${lastname} <br><br>
                     <pstyle="font-family: sans-serif; font-size: 22px;"><b>E-mail :</b> ${email} <br><br>
                     <pstyle="font-family: sans-serif; font-size: 22px;"><b>Desgination</b> : ${design} <br><br>
-                    <pstyle="font-family: sans-serif; font-size: 22px;"><b>date of birth</b> : ${dob} <br><br>
+                    <pstyle="font-family: sans-serif; font-size: 22px;"><b>Date Of Birth</b> : ${dob} <br><br>
                     <pstyle="font-family: sans-serif; font-size: 22px;"><b>Gender</b> : ${gender} <br><br>
+                    <pstyle="font-family: sans-serif; font-size: 22px;"><b>Skills In % ?</b> : ${skills} <br><br>
+                    <pstyle="font-family: sans-serif; font-size: 22px;"><b>City</b> : ${city} <br><br>
+                
                 </div>`
 
             );
