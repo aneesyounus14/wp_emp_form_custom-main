@@ -3,7 +3,7 @@
 */
 jQuery(document).ready(function($){
 
-    $('.pdf').click(function () {
+    $('.emp_print').click(function () {
 
             id = $(this).attr("id");
 

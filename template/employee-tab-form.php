@@ -218,7 +218,7 @@
 
       <div class="col-25">
         
-        <input type="date" id="emp_dob" name="emp_dob" value="0000-00-00">
+        <input type="date" id="emp_dob" name="emp_dob" value="<?php echo $dob; ?>">
 
       </div>
 
@@ -250,9 +250,9 @@
 
       <div class="col-25">
 
-        <input type="radio" name="gender" value="Male" required>Male 
+        <input type="radio" name="gender" <?php if ( $gender == 'Male' ) { ?> checked  <?php } ?> value="Male" required>Male 
 
-        <input type="radio" name="gender" value="Female" required>Female 
+        <input type="radio" name="gender" <?php if ( $gender == 'Female' ) { ?> checked  <?php } ?> value="Female" required>Female 
 
       </div>
 
@@ -269,7 +269,7 @@
       <div class="col-25">
 
       <input type="range" name="emp_skills" min="0" max="100" onchange="updateTextInput(this.value);" required>
-      <input type="text" id="textInput" value="" disabled style="width:45px;height:45px; text-align: center; border-radius: 50%; border:1px solid grey; color: black;"><br>
+      <input type="text" id="textInput" value="<?php echo $skills; ?>" disabled style="width:45px;height:45px; text-align: center; border-radius: 50%; border:1px solid grey; color: black;"><br>
 
       </div>
 
@@ -286,7 +286,7 @@
       <div class="col-25">
 
         <select width=300 style="width: 350px" name="emp_city">
-          <option value='' selected>Select a Color</option>
+          <option><?php echo $city; ?></option>
           <option value='Karachi'>Karachi</option>
           <option value='Lahore'>Lahore</option>
           <option value='Islamabad'>Islamabad</option>

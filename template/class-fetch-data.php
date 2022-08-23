@@ -93,9 +93,9 @@
 
         <form method="GET">
         
-          <td><a href="http://localhost/employee_form/wp-admin/options-general.php?page=employee-options&delete_id=<?php echo $row->id; ?>">Delete</a></td>
-          <td><a href="http://localhost/employee_form/wp-admin/options-general.php?page=employee-options&update_id=<?php echo $row->id; ?>">Update</a></td>
-          <td><a id ="<?php echo $id?>" class="pdf" style="text-decoration: none;cursor:pointer"> PDF</a></td>
+          <td><a href="http://localhost/employee_details/wp-admin/options-general.php?page=employee-options&delete_id=<?php echo $row->id; ?>">Delete</a></td>
+          <td><a href="http://localhost/employee_details/wp-admin/options-general.php?page=employee-options&update_id=<?php echo $row->id; ?>">Update</a></td>
+          <td><a id ="<?php echo $id?>" class="emp_print" style="text-decoration: none;cursor:pointer"> PDF</a></td>
         
         </form>
 
