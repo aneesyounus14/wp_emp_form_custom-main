@@ -26,13 +26,13 @@ jQuery(document).ready(function($){
             var gender = document.getElementById(pid7).innerText
             var skills = document.getElementById(pid8).innerText
             var city = document.getElementById(pid9).innerText
-            
 
             to_be_print = window.open("");
 
             to_be_print.document.write(
                 
                 `<div style="padding:50px">
+
                     <h1 style="font-family: sans-serif; font-size: 48px;">Employee Details</h1>
                     <img src="${img}" width="100" height="100"/>
                     <p style="font-family: sans-serif; font-size: 22px;"><b>First Name :</b> ${firstname} <br><br>
@@ -53,10 +53,22 @@ jQuery(document).ready(function($){
 
         }
     );
-    
 
+    // Search bar.
+    $( "#search_input" ).on(
+        "keyup",
+        function() {
+            var value = $( this ).val().toLowerCase();
+            $( "#seacrh_table tr" ).filter(
+                function() {
+                    $( this ).toggle( $( this ).text().toLowerCase().indexOf( value ) > -1 )
+                }
+            );
+        }
+    );
     
 });
+
 function updateTextInput(val) {
     document.getElementById('textInput').value=val; 
   }

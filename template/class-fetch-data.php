@@ -48,6 +48,9 @@
 <div class="containerForm">
 
   <h2>All Employee Details</h2>           
+
+	<input id="search_input" type="text" placeholder="Search.." style="width: 30%;">
+	<br><br> 
   
   <table id="myTable" width="90%" border="1">
 
@@ -68,7 +71,8 @@
         <td><h5>Print</h5></td>
           
       </tr>
-      
+
+    <tbody id="seacrh_table">
     <?php
 
     $i=1;
@@ -104,7 +108,7 @@
     <?php
     } 
     ?>
-    
+    </tbody>
   </table>
 
 </div>

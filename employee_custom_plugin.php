@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Employee Custom Form
  * Description: Made for the customization of form.
- * Version: 1.1.1.7
+ * Version: 1.1.1.0
  * Author: Codup
  * Author URI: https://codup.co/
  * Text Domain: employee-custom-form
