@@ -178,7 +178,7 @@
 	  </div>
 
 	  <div class="col-25">
-		<input type="text" id="emplname" name="emplastname" placeholder="Enter Last Name" required value="<?php echo $lastname; ?>">
+		<input type="text" id="emplname" name="emplastname" placeholder="Enter Last Name" required value="<?php echo $lastname; ?>" >
 	  </div>
 
 	</div>
@@ -190,7 +190,7 @@
 	  </div>
 
 	  <div class="col-25">
-		<input type="email" id="empemail" name="empemail" placeholder="Enter Email" required value="<?php echo $email; ?>">
+		<input type="email" id="empemail" name="empemail" placeholder="Enter Email" required value="<?php echo $email; ?>" disabled>
 	  </div>  
 
 	</div>
@@ -233,7 +233,7 @@
 
 	  <div class="col-25">
 
-			Your Photo: <input type="file" id="empimage" name="empimage" required/>
+			Your Photo: <input type="file" id="empimage" name="empimage" required value="<?php echo $image; ?>"/>
 
 	  </div>
 
