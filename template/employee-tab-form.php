@@ -190,7 +190,7 @@
 	  </div>
 
 	  <div class="col-25">
-		<input type="email" id="empemail" name="empemail" placeholder="Enter Email" required value="<?php echo $email; ?>" disabled>
+		<input type="email" id="empemail" name="empemail" placeholder="Enter Email" required value="<?php echo $email; ?>">
 	  </div>  
 
 	</div>
