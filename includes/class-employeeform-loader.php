@@ -1,53 +1,53 @@
 <?php
 /**
-*employee_Loader.
-*/
+ * employee_Loader.
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if( ! class_exists( 'employee_loader' )){
-    
-    /**
-    * Class employee_Loader.
-    */
-    class employee_Loader{
+if ( ! class_exists( 'employee_loader' ) ) {
 
-        public function __construct(){
+	/**
+	 * Class employee_Loader.
+	 */
+	class employee_Loader {
 
-            $this->includes();    
+		public function __construct() {
 
-            $this->create_sms_database();
+			$this->includes();
 
-            add_action( 'admin_enqueue_scripts', array( $this, 'emp_enqueue_scripts' ) );
+			$this->create_sms_database();
 
-        }
+			add_action( 'admin_enqueue_scripts', array( $this, 'emp_enqueue_scripts' ) );
 
-        /**
-        * Include Files depend on platform.
-        */
+		}
 
-        public function includes(){
+		/**
+		 * Include Files depend on platform.
+		 */
 
-            include_once 'class-employee-formtab.php';
-            
-        }
+		public function includes() {
 
-        /**
-        * Include JS
-        */
-        public function emp_enqueue_scripts() {
+			include_once 'class-employee-formtab.php';
+
+		}
+
+		/**
+		 * Include JS
+		 */
+		public function emp_enqueue_scripts() {
 			wp_enqueue_script( 'emp-tab-script', plugin_dir_url( __DIR__ ) . 'assets/js/employee-tab-script.js', array( 'jquery' ), wp_rand() );
 		}
 
-        public function create_sms_database(){
+		public function create_sms_database() {
 
-            global $wpdb;
+			global $wpdb;
 
-            $table_name = $wpdb->prefix . "empdetails";
+			$table_name = $wpdb->prefix . 'empdetails';
 
-            $sql = "CREATE TABLE $table_name(
+			$sql = "CREATE TABLE $table_name(
 
                 image varchar(255) NOT NULL,
                 id mediumint(9) NOT NULL AUTO_INCREMENT,
@@ -62,16 +62,16 @@ if( ! class_exists( 'employee_loader' )){
                 PRIMARY KEY(id)
 
             ) $charset_collate;";
-            
-            require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 
-            dbDelta( $sql ); 
+			require_once ABSPATH . 'wp-admin/includes/upgrade.php';
 
-        }
+			dbDelta( $sql );
 
-    }   
-    new employee_loader();
-    
+		}
+
+	}
+	new employee_loader();
+
 }
 
 

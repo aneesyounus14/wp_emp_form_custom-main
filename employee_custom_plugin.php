@@ -29,4 +29,4 @@ if ( ! defined( 'EMP_ABSPATH' ) ) {
 	define( 'EMP_ABSPATH', dirname( __FILE__ ) );
 }
 
-include_once EMP_ABSPATH . '/includes/class-employeeform-loader.php';
+require_once EMP_ABSPATH . '/includes/class-employeeform-loader.php';
